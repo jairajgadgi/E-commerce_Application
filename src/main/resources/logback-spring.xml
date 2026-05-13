@@ -1,0 +1,18 @@
+<configuration scan="true">
+
+    <!-- Simple console appender with fixed pattern -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <customFields>{"app":"ecommerce-application"}</customFields>
+        </encoder>
+    </appender>
+
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+    </root>
+
+    <!-- More verbose for application packages -->
+    <logger name="com.example.ecommerce_application" level="DEBUG"/>
+
+</configuration>
