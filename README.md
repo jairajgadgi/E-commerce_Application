@@ -83,12 +83,3 @@ MySQL is exposed on `localhost:3306`, Redis on `localhost:6379`, and MailHog UI 
 - `POST /api/v1/carts/{customerId}/items`
 - `POST /api/v1/orders/checkout`
 
-## Resume-Friendly Talking Points
-
-- Designed a modular backend with clear separation of concerns and reusable DTO/entity mapping
-- Implemented inventory-aware cart and checkout flows with transactional order persistence
-- Added Kafka-based order event publishing/consumption for asynchronous order workflows
-- Implemented JWT-based security and role-based API authorization
-- Added Redis caching for read-heavy product/category APIs and cache eviction on writes
-- Integrated email notifications for onboarding and order confirmation events
-- Containerized the stack using Docker and Compose for reproducible local execution
