@@ -50,6 +50,32 @@ services:
       - "1025:1025"
       - "8025:8025"
 
+  prometheus:
+    image: prom/prometheus:latest
+    restart: unless-stopped
+
+    ports:
+      - "9090:9090"
+
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+
+    depends_on:
+      - ecommerce-app
+
+  grafana:
+    image: grafana/grafana:latest
+    restart: unless-stopped
+
+    ports:
+      - "3000:3000"
+
+    depends_on:
+      - prometheus
+
+    volumes:
+      - grafana-storage:/var/lib/grafana
+
   ecommerce-app:
     build: .
     depends_on:
@@ -73,4 +99,5 @@ services:
 
 volumes:
   mysql_data:
+  grafana-storage:
 
