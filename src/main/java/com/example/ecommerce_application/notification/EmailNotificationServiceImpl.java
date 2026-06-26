@@ -22,7 +22,7 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 
     @Override
     public void sendWelcomeEmail(String to, String firstName) {
-        sendMail(to, "Welcome to E-Commerce Application", "Hi " + firstName + ",\n\nYour customer account has been created successfully.");
+        sendMail(to, "Welcome to the E-Commerce Application", "Hi " + firstName + ",\n\nYour customer account has been created successfully.");
     }
 
     @Override
